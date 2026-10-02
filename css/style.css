@@ -512,15 +512,9 @@ body {
 .footer {
     background-color: var(--secondary-color);
     text-align: center;
-    padding: 0px 10px;
+    padding: 50px 10px;
     color: white;
     font-weight: bold;
-}
-
-@media (max-width: 797px) {
-    .footer{
-        margin-bottom: 0px;
-    }
 }
 
 .footer span {
