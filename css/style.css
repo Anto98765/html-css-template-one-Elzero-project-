@@ -1,3 +1,48 @@
+@keyframes reveal-left {
+  from {
+    opacity: 0;
+    transform: translateX(-200px); /* Start hidden off-screen to the left */
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);     /* Slide into its normal position */
+  }
+}
+
+@keyframes reveal-right {
+  from {
+    opacity: 0;
+    transform: translateX(200px);  /* Start hidden off-screen to the right */
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);     /* Slide into its normal position */
+  }
+}
+
+@keyframes reveal-up {
+  from {
+    opacity: 0;
+    transform: translateY(200px); /* Start 100px lower down the page */
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);     /* Settle into its normal position */
+  }
+}
+
+
+@keyframes exit-up {
+  from {
+    opacity: 1;
+    transform: translateY(0);       /* Natural position on screen */
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-100px);  /* Pushed 100px upward off-screen */
+  }
+}
+
 /* Variables*/
 :root {
     --main-color: #10cab7;
@@ -229,6 +274,9 @@ body {
 .features .feat {
     padding: 20px;
     text-align: center;
+    animation: reveal-up ease-in both;
+    animation-timeline: view();
+    animation-range: entry 20% cover 42%;
 }
 
 .features .feat i {
@@ -308,6 +356,9 @@ body {
     position: absolute;
     right: -100px;
     z-index: -1;
+    animation: reveal-right ease-in both;
+    animation-timeline: view();
+    animation-range: entry 20% cover 35%;
 }
 
 .services .service-content .image img {
@@ -339,6 +390,9 @@ body {
 
 .portfolio .portfolio-content .card {
     background-color: white;
+    animation: reveal-up ease-in both;
+    animation-timeline: view();
+    animation-range: entry 20% cover 42%;
 }
 
 .portfolio .portfolio-content .card img {
@@ -408,6 +462,10 @@ body {
     top: -40px;
     left: -20px;
     z-index: -1;
+    animation: reveal-left ease-in both;
+    animation-timeline: view();
+    animation-range: entry 20% cover 42%
+
 }
 
 .about .about-content .image::after {
@@ -420,6 +478,9 @@ body {
     z-index: -1;
     right: -140px;
     top:-40px;
+    animation: reveal-right ease-in both;
+    animation-timeline: view();
+    animation-range: entry 20% cover 42%;
 }
 
 @media (max-width: 991px) {
@@ -478,6 +539,9 @@ body {
     color: var(--secondary-color);
     letter-spacing: -2px;
     margin-bottom: 15px;
+    animation: reveal-left ease-in both;
+    animation-timeline: view();
+    animation-range: entry 20% cover 25%;
 }
 .contact .contact-content .info .link {
     display: block;
@@ -485,6 +549,9 @@ body {
     font-weight: 800;
     color: var(--main-color);
     text-decoration: none;
+    animation: reveal-right ease-in both;
+    animation-timeline: view();
+    animation-range: entry 20% cover 25%;
 } 
 
 .contact .contact-content .info .social {
@@ -492,6 +559,9 @@ body {
     justify-content: center;
     margin-top: 20px;
     font-size: 16px;
+    animation: reveal-up ease-in both;
+    animation-timeline: view();
+    animation-range: entry 20% cover 25%;
 }
 
 .contact .contact-content .info .social i {
@@ -515,6 +585,12 @@ body {
     padding: 50px 10px;
     color: white;
     font-weight: bold;
+}
+
+@media (max-width: 797px) {
+    .footer{
+        margin-bottom: 30px;
+    }
 }
 
 .footer span {
