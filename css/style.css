@@ -519,7 +519,7 @@ body {
 
 @media (max-width: 797px) {
     .footer{
-        margin-bottom: 30px;
+        margin-bottom: 0px;
     }
 }
 
